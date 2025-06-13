@@ -48,6 +48,7 @@ main {
     padding: 20px;
     text-align: center;
     flex: 1;
+   background-color: ghostwhite; 
 }
 
 /* Paragraph Styling */
@@ -62,6 +63,45 @@ main img {
     width: 250px;
     height: auto;
     margin-bottom: 20px;
+}
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  padding: 10px;
+  justify-items: center;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem; /* Bigger icons */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.tech-item i {
+  font-size: 3.5rem; /* Even larger icon */
+}
+
+.tech-item span {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.tech-item:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* Responsive fallback for smaller screens */
+@media (min-width: 768px) {
+  .tech-stack {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Project Image Styling */

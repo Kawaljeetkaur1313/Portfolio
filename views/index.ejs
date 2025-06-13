@@ -1,41 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to my Node.js Portfolio</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/styles.css" 
+    />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+  </head>
+  <body>
     <header>
-        <h1><%= title %></h1>
+      <h1><%= title %></h1>
     </header>
     <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <% if (authenticated) { %>
-                <li><a href="/contact">Contact</a></li>
-                <li>
-                    <form action="/logout" method="POST">
-                        <button type="submit">Logout</button>
-                    </form>
-                </li>
-            <% } else { %>
-                <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li>
-            <% } %>
-        </ul>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <% if (authenticated) { %>
+        <li><a href="/contact">Contact</a></li>
+        <li>
+          <form action="/logout" method="POST">
+            <button type="submit">Logout</button>
+          </form>
+        </li>
+        <% } else { %>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+        <% } %>
+      </ul>
     </nav>
     <main>
-        <p>Hello, My name is <strong>Kawaljeet Kaur</strong> and I'm a full stack web developer with a passion for building things with Node.js!</p>
+      <p>
+        Hello! I'm <strong>Kawaljeet Kaur</strong>, a passionate Full Stack Web
+        Developer with hands-on experience in building responsive, user-focused
+        applications. I specialize in HTML, CSS, JavaScript, C#, Node.js,
+        MongoDB, and modern frontend frameworks like <strong>React</strong>,
+        <strong>Vue</strong>, and <strong>Angular</strong>. I'm also skilled in
+        working with both <strong>SQL</strong> and
+        <strong>NoSQL</strong> databases, enabling me to build scalable and
+        data-driven solutions from end to end.
+      </p>
+
+      <p>
+        This portfolio showcases some of my best work — combining creativity
+        with clean, maintainable code. Feel free to explore my projects, learn
+        more about me, and get in touch if you'd like to collaborate!
+      </p>
+ <h3>Tech Stack</h3>
+<div class="tech-stack">
+  <div class="tech-item">
+    <i class="fab fa-html5" style="color: #E44D26;"></i>
+    <span>HTML5</span>
+  </div>
+  <div class="tech-item">
+    <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+    <span>CSS3</span>
+  </div>
+  <div class="tech-item">
+    <i class="fab fa-js-square" style="color: #F7DF1E;"></i>
+    <span>JavaScript</span>
+  </div>
+  <div class="tech-item">
+    <i class="fab fa-react" style="color: #61DBFB;"></i>
+    <span>React</span>
+  </div>
+  <div class="tech-item">
+    <i class="fab fa-angular" style="color: #DD0031;"></i>
+    <span>Angular</span>
+  </div>
+  <div class="tech-item">
+    <i class="fab fa-vuejs" style="color: #42b883;"></i>
+    <span>Vue.js</span>
+  </div>
+  <div class="tech-item">
+    <i class="fab fa-node-js" style="color: #3C873A;"></i>
+    <span>Node.js</span>
+  </div>
+  <div class="tech-item">
+    <i class="fas fa-database" style="color: #4DB33D;"></i>
+    <span>SQL / NoSQL</span>
+  </div>
+  <div class="tech-item">
+    <i class="fas fa-leaf" style="color: #47A248;"></i>
+    <span>MongoDB</span>
+  </div>
+  <div class="tech-item">
+    <i class="fab fa-git-alt" style="color: #F1502F;"></i>
+    <span>Git</span>
+  </div>
+</div>
+
+
     </main>
 
-    <footer>
-        &copy; 2025 Kawaljeet
-    </footer>
-    
-</body>
+    <footer>&copy; 2025 Kawaljeet</footer>
+  </body>
 </html>
