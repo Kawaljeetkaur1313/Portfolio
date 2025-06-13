@@ -18,13 +18,13 @@
         <li><a href="/projects">Projects</a></li>
         <!-- <li><a href="/contact">Contact</a></li> -->
         <% if (authenticated) { %>
-          <li><a href="/contact">Contact</a></li>
-          <li>
-              <form action="/logout" method="POST">
-                  <button type="submit">Logout</button>
-              </form>
-          </li>
-      <% } %>
+        <li><a href="/contact">Contact</a></li>
+        <li>
+          <form action="/logout" method="POST">
+            <button type="submit">Logout</button>
+          </form>
+        </li>
+        <% } %>
       </ul>
     </nav>
     <main>
@@ -34,25 +34,40 @@
         alt="Kawaljeet Kaur"
         style="width: 250px; height: auto; border-radius: 50%"
       />
-      <p>
-        Hello, I'm <%= name %> , a passionate Full Stack Web Developer. I
-        specialize in building dynamic, user-friendly web applications using a
-        variety of technologies.
-      </p>
+      <main>
+        <h2>About Me</h2>
+        <p>
+          I'm Kawaljeet Kaur, a recent graduate from the Software Systems
+          Developer program at BCIT. I hold a Bachelor's in Computer
+          Applications and a Bachelor's in Education, combining technical
+          expertise with strong communication and teaching skills.
+        </p>
+
+        <p>
+          Over the past year, I’ve built several full-stack applications using
+          technologies like HTML, Javascript, React, Angular, Vue, C#, Node.js, Express, MongoDB, and AWS. I enjoy
+          solving real-world problems through code and continuously learning new
+          tools and frameworks.
+        </p>
+
+        <p>
+          Whether it’s backend logic, frontend design, or cloud deployment — I
+          love creating smooth, impactful user experiences. My goal is to join a
+          dynamic team where I can grow as a developer and contribute to
+          meaningful projects.
+        </p>
+      </main>
+
       <!-- Social Media Links -->
       <p>Connect with me on:</p>
       <ul>
         <li>
-          <a
-            href=<%= linkedIn %>
-            target="_blank"
-            ><strong>LinkedIn</strong></a
+          <a href="<%" ="linkedIn" %>
+            target="_blank" ><strong>LinkedIn</strong></a
           >
         </li>
         <li>
-          <a href=<%= Github %> target="_blank"
-            ><strong>GitHub</strong></a
-          >
+          <a href="<%" ="Github" %> target="_blank" ><strong>GitHub</strong></a>
         </li>
       </ul>
     </main>
