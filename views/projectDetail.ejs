@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header><h1><%= title %></h1></header>
+    <main>
+        <div class="card">
+            <h2><%= project.title %></h2>
+            <p class="summary"><%= project.summary %></p>
+            <p class="description"><%= project.description %></p>
+            <img src="/uploads/<%= project.screenshot %>" alt="<%= project.title %>" class="project-image" />
+        </div>
+        <h3>Technologies Used:</h3>
+        <ul class="tech-list">
+            <% if (project.tech && Array.isArray(project.tech) && project.tech.length > 0) { %>
+                <% project.tech.forEach(tech => { %>
+                    <li><%= tech %></li>
+                <% }) %>
+            <% } else { %>
+                <li>No technologies listed.</li>
+            <% } %>
+        </ul>        
+    </main>
+    <footer><a href="/projects">← Back to Projects</a></footer>
+</body>
+</html>

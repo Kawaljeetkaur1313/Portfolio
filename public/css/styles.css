@@ -1,0 +1,275 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    /* margin: 0;
+    padding: 0; */
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Navigation Bar Styling */
+nav ul {
+    background-color: #333;
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    border-radius: 4px;
+}
+
+/* Main Content Area */
+main {
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+/* Paragraph Styling */
+main p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Image Styling */
+main img {
+    border-radius: 50%;
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Project Image Styling */
+.project-image {
+    /* width: 300px;  */
+    height: 200px; 
+    object-fit: contain; 
+    border-radius: 10px; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* project page styling */
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center content */
+}
+/* Form Styling for Contact Page */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+form textarea {
+    resize: vertical;
+    height: 120px;
+    overflow: auto;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%
+    /* transition: background 0.3s; */
+}
+
+form button:hover {
+    background-color: #444;
+}
+.action-btn {
+    background-color: #333;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+    text-decoration: none; /* For links */
+    transition: background 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #444;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    /* bottom: 10px; */
+}
+a.back-link
+{
+    color: white;
+}
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main p {
+        font-size: 16px;
+    }
+
+    .project-image {
+        max-width: 100%;
+    }
+    form{
+        padding: 15px;
+    }
+
+    form input,
+    form textarea {
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .project-image {
+        width: 100%; /* Full width on mobile */
+        max-width: 300px; /* But don't exceed original size */
+        height: auto; /* Allow height to adjust proportionally */
+    }
+    #projects-container {
+        grid-template-columns: 1fr; /* Simpler definition for mobile */
+   /* Add some padding */
+    }
+    
+    .card {
+      /* Ensure full width on mobile */
+        margin-bottom: 15px;
+    }
+}
+
+/* Project Card Styling for Projects Page */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+}
+
+.card a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.card a:hover {
+    background-color: #444;
+}
+
+/* Search Input Styling */
+#searchInput {
+    width: 160px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Section Heading Styling for Consistency */
+h1, h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Additional Styling for Social Media Links on About Page */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}

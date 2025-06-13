@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1><%= title %></h1>
+    </header>
+    <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <!-- <li><a href="/contact">Contact</a></li> -->
+          <% if (authenticated) { %>
+            <li><a href="/contact">Contact</a></li>
+            <li>
+                <form action="/logout" method="POST">
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
+        <% } %>
+        </ul>
+    </nav>
+    <main>
+        <pre><%= JSON.stringify(roles) %></pre>
+
+        <% if (authenticated && roles.includes('admin')) { %>
+            <a href="/projects/create" class="action-btn">+ Add New Project</a>
+        <% } %>
+        
+        <form action="/projects/search" method="get">
+            <label for="searchInput">Search a Project</label>
+            <input type="text" id="searchInput" name="query" placeholder="Search projects..." />
+            <button type="submit">Search</button>            
+        </form>
+       <div id="projects-container">
+            <% if(projects.length > 0) { %>
+            <% for (let i = 0; i < projects.length; i++) { %>
+            <div class="card">
+                <h2><%= projects[i].title %></h2>
+                <p><%= projects[i].summary %></p>
+
+                <img src="/uploads/<%= projects[i].screenshot %>" alt="<%= projects[i].title %>" class="project-image" />                
+                <% if (authenticated && roles.includes('admin')) { %>
+                    <a href="/projects/<%= projects[i]._id %>/edit">Edit</a>
+                    <button class="action-btn" onclick="deleteProject('<%= projects[i]._id %>')">Delete</button>
+                <% } %>
+                
+                <a href="/projects/<%= projects[i]._id %>">View Details</a>
+            </div>
+        <%}%>
+        <% } else { %>
+            <p>No Projects Found</p>
+            <% } %>
+      </div>
+    </main>
+    <footer>&copy; 2025 Kawaljeet</footer>
+</body>
+<script>
+    async function deleteProject(projectId) {
+        if (confirm("Are you sure you want to delete this project?")) {
+            try {
+                const response = await fetch(`/projects/${projectId}`, {
+                    method: "DELETE",
+                });
+
+                if (response.ok) {
+                    alert("Project deleted successfully!");
+                    window.location.reload(); // Refresh page to update project list
+                } else {
+                    alert("Failed to delete project.");
+                }
+            } catch (error) {
+                console.error("Error deleting project:", error);
+                alert("An error occurred.");
+            }
+        }
+    }
+</script>
+</html>

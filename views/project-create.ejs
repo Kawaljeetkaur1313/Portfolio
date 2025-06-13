@@ -1,0 +1,67 @@
+<head>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<section class="edit-page">
+  <h2><%= project && project._id ? "Edit" : "Create" %> the Project</h2>
+
+  <form action="<%= project && project._id ? `/projects/${project._id}/update` : '/projects/create' %>" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="project_id" value="<%= project ? project._id : '' %>">
+
+    <label for="title" class="visually-hidden">Project Name:</label>
+    <input
+      id="title"
+      name="title"
+      type="text"
+      placeholder="Enter a Project Name"
+      value="<%= project ? project.title : '' %>"
+      required
+    />
+
+    <label for="summary" class="visually-hidden">Summary:</label>
+    <input
+      type="text"
+      name="summary"
+      id="summary"
+      placeholder="Enter a Project Summary"
+      value="<%= project ? project.summary : '' %>"
+      required
+    />
+    
+    <label for="description" class="visually-hidden">Description:</label>
+    <input
+      type="text"
+      name="description"
+      id="description"
+      placeholder="Enter a Project Description"
+      value="<%= project ? project.description : '' %>"
+      required
+    />
+    
+    <label for="tech" class="visually-hidden">Tech Stack:</label>
+    <input
+      type="text"
+      name="tech"
+      id="tech"
+      placeholder="e.g., HTML, CSS, JavaScript" 
+      value="<%= project && project.tech ? project.tech.join(', ') : '' %>"
+      required
+    />
+
+    <label for="screenshot" class="visually-hidden">Upload a file:</label>
+    <input type="file" name="screenshot" id="screenshot" accept="image/*" />
+
+    <% if (project && project.screenshot) { %>
+      <p>Current Screenshot:</p>
+      <img src="/uploads/<%= project.screenshot %>" alt="Project Screenshot" width="150">
+    <% } %>
+
+    <% if (typeof errorMessage !== "undefined" && errorMessage) { %>
+      <p class="error-message"><%= errorMessage %></p>
+    <% } %>    
+
+    <button type="submit">
+      <%= project && project._id ? "Update Project" : "Create Project" %>
+    </button>
+  </form>
+</section>
